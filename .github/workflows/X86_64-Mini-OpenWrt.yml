@@ -101,6 +101,7 @@ jobs:
         ./scripts/feeds install -a
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+        sed -i 's/CGO_ENABLED=0/CGO_ENABLED=1/g' feeds/packages/utils/v2dat/Makefile
 
     - name: Load Custom Configuration
       run: |
